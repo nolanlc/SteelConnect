@@ -1,0 +1,39 @@
+{"Items":[
+    {
+    "id": "San_Jose_id",
+    "name": "SJOffice",
+    "org": "org-Orgrvbd039-6b209b6973717378",
+    "longname": "San Jose Office",
+    "uplinks": [
+        ""
+    ],
+    "networks": [
+        ""
+    ],
+    "street_address": "91 Cashew Blossom Drive",
+    "city": "San Jose",
+    "country": "US",
+    "timezone": "America/Los_Angeles",
+    "size": 0,
+    "uid": 0
+    },
+    {
+    "id": "Atlanta_id",
+    "name": "AtlantaOffice",
+    "org": "org-Orgrvbd039-6b209b6973717378",
+    "longname": "Atlanta Office",
+    "uplinks": [
+        ""
+    ],
+    "networks": [
+        ""
+    ],
+    "street_address": "1775 The Exchange",
+    "city": "Atlanta",
+    "country": "US",
+    "timezone": "America/New_York",
+    "size": 0,
+    "uid": 0
+    }
+    ]
+}

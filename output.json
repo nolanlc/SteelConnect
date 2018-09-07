@@ -1,0 +1,253 @@
+{
+  "items": [
+    {
+      "sitelink_pool_v4": "172.16.0.0/24",
+      "org": "org-Orgrvbd039-6b209b6973717378",
+      "city": "San Francisco",
+      "street_address": "680 Folsom St",
+      "networks": [
+        "net-Net-4aef01c35e95f49b",
+        "net-Net-b6308ec73fd44f1f"
+      ],
+      "agent_site": 1,
+      "sitelink_leafs": [],
+      "sitelink_leaf": null,
+      "id": "site-SFNUC-014dd57271f18f50",
+      "radius_servers": "[]",
+      "extra_segments": [],
+      "size": 2,
+      "xlan": 0,
+      "alternate_hub": null,
+      "sitelink_port": 4500,
+      "timezone": "America/Los_Angeles",
+      "sitelink_vip": "198.18.0.2",
+      "uid": 1,
+      "longname": "SanFrancisco-NUC HQ",
+      "sitelink_vip6": "fd6c:98eb::198.18.0.2",
+      "country": "US",
+      "breakout_sitelink_site": null,
+      "dns_name": "sibfdd3d9f",
+      "name": "SFNUC",
+      "breakout_preference": [],
+      "uplinks": [
+        "uplink-Uplink-9dd79eeecf10601a"
+      ],
+      "tags": null,
+      "dnsroutes": null
+    },
+    {
+      "sitelink_pool_v4": null,
+      "org": "org-Orgrvbd039-6b209b6973717378",
+      "city": "Austin",
+      "street_address": null,
+      "networks": [
+        "net-Net-b54cb547513ed814"
+      ],
+      "agent_site": 0,
+      "sitelink_leafs": [],
+      "sitelink_leaf": "site-SDI130-533c58c74715486c",
+      "id": "site-570SD-0d124fcbf9adb5ff",
+      "radius_servers": "[]",
+      "extra_segments": [],
+      "size": 2,
+      "xlan": 0,
+      "alternate_hub": null,
+      "sitelink_port": 4500,
+      "timezone": "America/Chicago",
+      "sitelink_vip": "198.18.0.3",
+      "uid": 2,
+      "longname": "570SD-Austin",
+      "sitelink_vip6": "fd6c:98eb::198.18.0.3",
+      "country": "US",
+      "breakout_sitelink_site": null,
+      "dns_name": "sif14e6380",
+      "name": "570SD",
+      "breakout_preference": [],
+      "uplinks": [
+        "uplink-Uplink-12545e8db5163485",
+        "uplink-DHCPUplink-9bb1b779099ca061"
+      ],
+      "tags": null,
+      "dnsroutes": null
+    },
+    {
+      "sitelink_pool_v4": null,
+      "org": "org-Orgrvbd039-6b209b6973717378",
+      "city": "Los Angeles",
+      "street_address": null,
+      "networks": [
+        "net-Net-4cb3359a0cf7685d",
+        "net-Net-b81e3241056ce4db"
+      ],
+      "agent_site": 0,
+      "sitelink_leafs": [
+        "site-570SD-0d124fcbf9adb5ff",
+        "site-SFGNS3-b3e247df9acf3b3c",
+        "site-T440sSEA-8eda781a02f80d37"
+      ],
+      "sitelink_leaf": null,
+      "id": "site-SDI130-533c58c74715486c",
+      "radius_servers": "[]",
+      "extra_segments": [],
+      "size": 2,
+      "xlan": 0,
+      "alternate_hub": null,
+      "sitelink_port": 4500,
+      "timezone": "America/Los_Angeles",
+      "sitelink_vip": "198.18.0.5",
+      "uid": 4,
+      "longname": "SDI130-Los Angeles",
+      "sitelink_vip6": "fd6c:98eb::198.18.0.5",
+      "country": "US",
+      "breakout_sitelink_site": null,
+      "dns_name": "sia40d55b2",
+      "name": "SDI130",
+      "breakout_preference": [],
+      "uplinks": [
+        "uplink-Uplink-f8cb93924937af1d",
+        "uplink-SDI130StaticUplink-d6c68cac50c9e59f"
+      ],
+      "tags": null,
+      "dnsroutes": null
+    },
+    {
+      "sitelink_pool_v4": null,
+      "org": "org-Orgrvbd039-6b209b6973717378",
+      "city": "San Diego",
+      "street_address": null,
+      "networks": [
+        "net-Net-0c2e2461c06930f9",
+        "net-Net-c290b456c613084c"
+      ],
+      "agent_site": 0,
+      "sitelink_leafs": [],
+      "sitelink_leaf": "site-SDI130-533c58c74715486c",
+      "id": "site-SFGNS3-b3e247df9acf3b3c",
+      "radius_servers": "[]",
+      "extra_segments": [],
+      "size": 2,
+      "xlan": 0,
+      "alternate_hub": null,
+      "sitelink_port": 4500,
+      "timezone": "America/Los_Angeles",
+      "sitelink_vip": "198.18.0.6",
+      "uid": 5,
+      "longname": "GNS3-SanDiego",
+      "sitelink_vip6": "fd6c:98eb::198.18.0.6",
+      "country": "US",
+      "breakout_sitelink_site": null,
+      "dns_name": "sib47887eb",
+      "name": "GNS3-SanDiego",
+      "breakout_preference": [],
+      "uplinks": [
+        "uplink-Uplink-2f437f8e04735ae4",
+        "uplink-SFStaticUplink-e9021ce97c1f2519",
+        "uplink-SFOSPFUplink-ffe8696cedb575ac"
+      ],
+      "tags": null,
+      "dnsroutes": null
+    },
+    {
+      "sitelink_pool_v4": null,
+      "org": "org-Orgrvbd039-6b209b6973717378",
+      "city": "Las Vegas",
+      "street_address": null,
+      "networks": [
+        "net-Net-cb618ec15e55f140"
+      ],
+      "agent_site": 0,
+      "sitelink_leafs": [],
+      "sitelink_leaf": "site-SDI130-533c58c74715486c",
+      "id": "site-T440sSEA-8eda781a02f80d37",
+      "radius_servers": "[]",
+      "extra_segments": [],
+      "size": 2,
+      "xlan": 0,
+      "alternate_hub": null,
+      "sitelink_port": 4500,
+      "timezone": "America/Los_Angeles",
+      "sitelink_vip": "198.18.0.7",
+      "uid": 6,
+      "longname": "T440s-Las Vegas",
+      "sitelink_vip6": "fd6c:98eb::198.18.0.7",
+      "country": "US",
+      "breakout_sitelink_site": null,
+      "dns_name": "sia9fa6de0",
+      "name": "T440s",
+      "breakout_preference": [],
+      "uplinks": [
+        "uplink-Uplink-10a8319954cdfc72"
+      ],
+      "tags": null,
+      "dnsroutes": null
+    },
+    {
+      "sitelink_pool_v4": null,
+      "org": "org-Orgrvbd039-6b209b6973717378",
+      "city": "San Jose",
+      "street_address": "91 Cashew Blossom Drive",
+      "networks": [
+        "net-Net-8803c06879166ad4"
+      ],
+      "agent_site": 0,
+      "sitelink_leafs": [],
+      "sitelink_leaf": null,
+      "id": "site-SJOffice-328b88c254cb95ec",
+      "radius_servers": "[]",
+      "extra_segments": [],
+      "size": 2,
+      "xlan": 0,
+      "alternate_hub": null,
+      "sitelink_port": 4500,
+      "timezone": "America/Los_Angeles",
+      "sitelink_vip": "198.18.0.4",
+      "uid": 332,
+      "longname": "San Jose Office",
+      "sitelink_vip6": "fd6c:98eb::198.18.0.4",
+      "country": "US",
+      "breakout_sitelink_site": null,
+      "dns_name": "sib890ce15",
+      "name": "SJOffice",
+      "breakout_preference": [],
+      "uplinks": [
+        "uplink-Uplink-9dec705e3ec62009"
+      ],
+      "tags": null,
+      "dnsroutes": null
+    },
+    {
+      "sitelink_pool_v4": null,
+      "org": "org-Orgrvbd039-6b209b6973717378",
+      "city": "Atlanta",
+      "street_address": "1775 The Exchange",
+      "networks": [
+        "net-Net-b4d99746d0c407dc"
+      ],
+      "agent_site": 0,
+      "sitelink_leafs": [],
+      "sitelink_leaf": null,
+      "id": "site-AtlantaOffice-b1faed3f91ac1f27",
+      "radius_servers": "[]",
+      "extra_segments": [],
+      "size": 2,
+      "xlan": 0,
+      "alternate_hub": null,
+      "sitelink_port": 4500,
+      "timezone": "America/New_York",
+      "sitelink_vip": "198.18.0.8",
+      "uid": 333,
+      "longname": "Atlanta Office",
+      "sitelink_vip6": "fd6c:98eb::198.18.0.8",
+      "country": "US",
+      "breakout_sitelink_site": null,
+      "dns_name": "sidf828efa",
+      "name": "AtlantaOffice",
+      "breakout_preference": [],
+      "uplinks": [
+        "uplink-Uplink-fcf44ae44196bfd2"
+      ],
+      "tags": null,
+      "dnsroutes": null
+    }
+  ]
+}
