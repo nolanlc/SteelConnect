@@ -5,6 +5,8 @@
 # This Python module provides functions for calling the SteelConnect SDWAN 
 # REST API.  The functions in this module include requesting site data, creating sites
 # and deleting sites.
+#
+# Nolan Chen
 ###########################################################################################
 
 import requests
