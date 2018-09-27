@@ -144,7 +144,7 @@ def write_json_file(filename, dict):
 def main():
 
     user = 'Nolan.Chen@riverbed.com'
-    password = 'SteelConnectRocks2016!'
+    password = 'SteelConnectRocksXXXX!'
 
     orgid = "org-Orgrvbd039-6b209b6973717378"
     site_id = ""
