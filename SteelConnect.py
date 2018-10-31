@@ -6,6 +6,8 @@
 # REST API.  The functions in this module include requesting site data, creating sites
 # and deleting sites.
 #
+# Use 'site_list.json' as sample file for inputing sites.
+#
 # Nolan Chen
 ###########################################################################################
 
@@ -137,23 +139,21 @@ def write_json_file(filename, dict):
 
 ####################################################################################
 #
-# def main()
+# def sites_demo()
 #
-# Main program
+# Sites Demo program
+#
+# sites_demo calls functions for listing, creating and deleting sites
 #####################################################################################
-def main():
+def sites_demo(user, password, orgid, base_uri):
 
-    user = 'Nolan.Chen@riverbed.com'
-    password = 'SteelConnectRocksXXXX!'
-
-    orgid = "org-Orgrvbd039-6b209b6973717378"
+ 
     site_id = ""
    
-    base_uri = "https://riverbed-se01.riverbed.cc/api/scm.config/1.0/"
     sites_url = base_uri + "org/"+orgid + "/sites" 
     delete_url = base_uri + "site/"
  
-    print("Hello SteelConnect!")
+    print("Hello SteelConnect Sites!")
 
     #Print Sites
     site_list = get_org_sites(user,password, sites_url)
@@ -162,11 +162,14 @@ def main():
         #print_dictionary_contents(site)
         print(site['longname'])
 
+
     #Create Sites
-    site_dict = read_sites_file()
-    create_sites(user,password,sites_url, site_dict)
+    #site_dict = read_sites_file()
+    #create_sites(user,password,sites_url, site_dict)
+
 
     #Delete Site
+    """
     site_longname = input("\nEnter Site name to delete:")
     site_id = get_site_id(user,password, sites_url,site_longname)
     if site_id != "":
@@ -174,6 +177,78 @@ def main():
     else:
         print("Site ID for '"+site_longname+"' not found.")
 
-#########################################################
+    """
+##############################################################################
+#
+# def get_api(user,password,url)
+#
+# Returns a list of dictionaries.  Each dictionary contains application info
+#
+##############################################################################
+def get_api(user, password,url):
+    r = get_request(url, user,password)
 
-main()
+
+    if ( r.status_code == 200):
+        json_result = r.json()
+        #print("Results:\n"+str(json_result))
+        write_json_file("output.json", json_result)
+    else:
+        print ("Error Code: "+str(r.status_code))
+        
+    result = json_result["items"]
+
+    return result
+
+
+###################################################
+#
+# def print_item_names
+#
+# items = list of dictionaries
+#
+######################################################
+def print_item_names(items):
+    i=0
+    name_list = []
+    for apps in items:
+
+        app_name = apps['name']
+        name_list.append(app_name)
+        #print(str(i)+": "+ app_name)
+    name_list.sort()
+    f = open('app_list.txt', 'w')
+    for name in name_list:
+        i=i+1
+        app = str(i) +": "+name
+        print(app)
+        f.write(app+'\n')
+
+    f.close()
+
+
+
+
+##################################################
+#
+# Main Program
+#
+##################################################
+user = 'Nolan.Chen@riverbed.com'
+password = 'SteelConnectRocks1971!'
+orgid = "org-Orgrvbd039-6b209b6973717378"
+
+base_uri = "https://riverbed-se01.riverbed.cc/api/scm.config/1.0/"
+
+print ("Hello SteelConnect!")
+
+#sites_demo(user, password, orgid, base_uri)
+
+
+
+url = base_uri + "apps"    #Get Apps
+items = get_api(user,password, url)   
+#print (items)
+print_item_names(items)
+
+
