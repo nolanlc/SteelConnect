@@ -148,10 +148,8 @@ def write_json_file(filename, dict):
 def sites_demo(user, password, orgid, base_uri):
 
  
-    site_id = ""
    
     sites_url = base_uri + "org/"+orgid + "/sites" 
-    delete_url = base_uri + "site/"
  
     print("Hello SteelConnect Sites!")
 
@@ -170,6 +168,8 @@ def sites_demo(user, password, orgid, base_uri):
 
     #Delete Site
     """
+    site_id = ""
+    delete_url = base_uri + "site/"
     site_longname = input("\nEnter Site name to delete:")
     site_id = get_site_id(user,password, sites_url,site_longname)
     if site_id != "":
@@ -193,10 +193,12 @@ def get_api(user, password,url):
         json_result = r.json()
         #print("Results:\n"+str(json_result))
         write_json_file("output.json", json_result)
+        result = json_result["items"]
     else:
-        print ("Error Code: "+str(r.status_code))
+        print ("API GET Request Error Code: "+str(r.status_code))
+        result = {}
         
-    result = json_result["items"]
+    
 
     return result
 
@@ -217,7 +219,7 @@ def print_item_names(items):
         name_list.append(app_name)
         #print(str(i)+": "+ app_name)
     name_list.sort()
-    f = open('app_list.txt', 'w')
+    f = open('name_list.txt', 'w')
     for name in name_list:
         i=i+1
         app = str(i) +": "+name
@@ -226,6 +228,30 @@ def print_item_names(items):
 
     f.close()
 
+#########################################################
+# 
+# def print_items(items)
+# 
+# Outputs a list of items to a JSON file.
+# 
+#########################################################    
+
+def print_items(items):
+    filename = 'items.json'
+
+    write_json_file(filename, items)
+
+    print ("items outputed to file: '"+filename+"'")
+
+    """
+    f = open('items.txt','w')
+
+    for item in items:
+        output = "\n" + str(item)
+        print(output)
+        f.write(output)
+    """
+        
 
 
 
@@ -234,21 +260,47 @@ def print_item_names(items):
 # Main Program
 #
 ##################################################
-user = 'Nolan.Chen@riverbed.com'
-password = 'SteelConnectRocks1971!'
-orgid = "org-Orgrvbd039-6b209b6973717378"
 
+
+#######################################################
+# SCM Credentials
+#########################################################
+
+user = 'Nolan.Chen@riverbed.com'
+password = 'SteelConnectRocksXXXX!'
+orgid = "org-Orgrvbd039-6b209b6973717378"
 base_uri = "https://riverbed-se01.riverbed.cc/api/scm.config/1.0/"
 
 print ("Hello SteelConnect!")
+
+######################################################################
+# Demonstrate listing, adding and deleting SteelConnect Sites
+######################################################################
 
 #sites_demo(user, password, orgid, base_uri)
 
 
 
-url = base_uri + "apps"    #Get Apps
+#####################################################################
+# Use REST API to GET from SCM
+#####################################################################
+
+#get_param = "apps"
+
+#List all BGP Neighbors
+get_param = "org/" + orgid + "/bgpneighs"
+
+#Get BGP Neighbor Info
+#bgpneighid = "bgpneigh-aristabgp-377f1dfe2c7fdd34"
+#get_param = "bgpneighs/"+bgpneighid
+
+
+
+url = base_uri + get_param    
+
 items = get_api(user,password, url)   
-#print (items)
-print_item_names(items)
+print_items(items)
+#print_item_names(items)
 
 
+print ("Program complete.")
