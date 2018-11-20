@@ -1,2 +1,2 @@
 # SteelConnect
-Python code for calling Riverbed SDWAN REST API
+Python code for calling Riverbed SDWAN via REST API
